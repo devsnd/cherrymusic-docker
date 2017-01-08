@@ -12,7 +12,7 @@ EnvironmentFile=/etc/cherrymusic.service.conf
 # ExecStartPre may fail: It deletes the old image and creates the data store folder
 ExecStartPre=-bash -c '/usr/bin/docker rm -f cherrymusic && mkdir -p ${DATA_STORE}/cherrymusic'
 ExecStart=docker run \
-    --name cherrymusic
+    --name cherrymusic \
     -p ${HOST_PORT}:8080 \
     --volume ${DATA_STORE}/cherrymusic:/root:shared \
     cherrymusic/cherrymusic
