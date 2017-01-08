@@ -22,11 +22,6 @@ RUN mkdir -p \
     ~/.local/share/cherrymusic \
     ~/basedir
 
-# create default configuration file
-RUN cherrymusic --newconfig && mv ~/.config/cherrymusic/cherrymusic.conf.new ~/.config/cherrymusic/cherrymusic.conf
-# rewrite the default basedir
-RUN sed -i 's/basedir = None/basedir=\/root\/basedir\//' ~/.config/cherrymusic/cherrymusic.conf
-
 EXPOSE 8080
 
 CMD cherrymusic
