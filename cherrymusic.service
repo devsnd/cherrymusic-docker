@@ -24,7 +24,8 @@ ExecStartPre=-/bin/bash -c ' \
             mv ${DATA_STORE}/cherrymusic/.config/cherrymusic/cherrymusic.conf{.new,} \
         && \
             sed -i "s/basedir = None/basedir=\/root\/basedir\//" ${DATA_STORE}/cherrymusic/.config/cherrymusic/cherrymusic.conf \
-    ; fi \
+    ; fi && \
+    wait < <(jobs -p) \
 '
 ExecStart=/usr/bin/docker run \
     --name cherrymusic \
