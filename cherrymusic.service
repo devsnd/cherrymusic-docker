@@ -10,8 +10,8 @@ After=docker.service
 # the easiest config is to store the data in a common place
 EnvironmentFile=/etc/cherrymusic.service.conf
 # ExecStartPre may fail: It deletes the old image and creates the data store folder
-ExecStartPre=-bash -c '/usr/bin/docker rm -f cherrymusic && mkdir -p ${DATA_STORE}/cherrymusic'
-ExecStart=docker run \
+ExecStartPre=-/bin/bash -c '/usr/bin/docker rm -f cherrymusic && mkdir -p ${DATA_STORE}/cherrymusic'
+ExecStart=/usr/bin/docker run \
     --name cherrymusic \
     -p ${HOST_PORT}:8080 \
     --volume ${DATA_STORE}/cherrymusic:/root:shared \
