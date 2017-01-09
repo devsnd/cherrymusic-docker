@@ -12,10 +12,15 @@ Dockerfile and Systemd configuration for CherryMusic
 
 # Usage:
 
-To add music to your library symlink the music into `/root/data/cherrmusic/basedir`.
-e.g.: `ln -s /mnt/my/music/hdd /root/data/cherrmusic/basedir/music`
+To add music to your library symlink the music into
 
-The configuration files are in `/root/data/cherrmusic/.config/cherrymusic`
+`/root/data/cherrmusic/basedir`
+
+e.g.:
+
+`ln -s /mnt/my/music/hdd /root/data/cherrmusic/basedir/music`
+
+Configuration and cached albumart are in `/root/data/cherrmusic/.config` and `/root/data/cherrmusic/.local/share` respectively
 
 # insane installtion:
 
